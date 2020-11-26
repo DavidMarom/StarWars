@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from '../cmps/TopBar';
-import { MovieList } from '../cmps/MovieList';
+import { FilmsList } from '../cmps/FilmsList';
 
 export function Home(props) {
     return (
@@ -8,7 +8,7 @@ export function Home(props) {
             <div className="outter-container">
                 <div className="inner-container">
                     <TopBar />
-                    <MovieList />
+                    <FilmsList />
 
                 </div>
             </div>
