@@ -2,7 +2,7 @@ const initialState = {
     films: null
 }
 
-const reducer_A = (state = initialState, action) => {
+const reducer_films = (state = initialState, action) => {
 
     switch (action.type) {
         case 'GET_FILMS':
@@ -13,4 +13,4 @@ const reducer_A = (state = initialState, action) => {
     }
 }
 
-export default reducer_A;
+export default reducer_films;

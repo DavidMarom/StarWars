@@ -9,11 +9,11 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux';
-import reducerA from './store/reducers/reducer-a';
+import reducer_films from './store/reducers/reducer-films';
 import reducerB from './store/reducers/reducer-b';
 
 const rootReducer = combineReducers({
-  reducerA,
+  reducer_films,
   reducerB
 })
 

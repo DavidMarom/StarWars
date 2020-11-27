@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import TopBar from '../cmps/TopBar';
 import { FilmsList } from '../cmps/FilmsList';
 import { connect } from 'react-redux';
-import { onGetFilms } from '../store/actions/action-a';
+import { onGetFilms } from '../store/actions/action-films';
 
 export function _Home(props) {
     useEffect(() => {
@@ -31,7 +31,7 @@ export function _Home(props) {
 
 const mapStateToProps = state => {
     return {
-        films: state.reducerA.films
+        films: state.reducer_films.films
     };
 };
 

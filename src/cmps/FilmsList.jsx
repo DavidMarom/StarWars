@@ -16,7 +16,7 @@ export function _FilmsList({ films }) {
 
 const mapStateToProps = state => {
     return {
-        films: state.reducerA.films
+        films: state.reducer_films.films
     };
 };
 

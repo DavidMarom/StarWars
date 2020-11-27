@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
 import thunk from 'redux-thunk'
 
-import reducerA from '../store/reducers/reducer-a';
+import reducerA from '../store/reducers/reducer-films';
 import reducerB from '../store/reducers/reducer-b';
 
 const rootReducer = combineReducers({
