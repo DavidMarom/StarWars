@@ -1,12 +1,16 @@
-export function onInc_a() {
-    return dispatch => {
-        dispatch({ type: 'INC_A' })
+import { filmsService } from '../../services/filmsService';
+
+
+
+export function onGetFilms() {
+    console.log('******action getFilms triggered');
+    return async dispatch => {
+        try {
+            const films = await filmsService.getFilms();
+            dispatch({ type: 'GET_FILMS', films })
+        }
+        catch (err) {
+            console.log('Error loading films');
+        }
     }
 }
-
-export function onDec_a() {
-    return dispatch => {
-        dispatch({ type: 'DEC_A' })
-    }
-}
-

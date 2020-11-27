@@ -1,27 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { filmsService } from '../services/filmsService';
+import React, { useEffect } from 'react';
 import { FilmStrip } from './FilmStrip';
-
-export function FilmsList() {
-
-    const [films, setFilms] = useState('');
-
-    useEffect(() => {
-        filmsService.getFilms()
-            .then(res => setFilms(res.results))
-            .catch(err => err)
+import { connect } from 'react-redux';
 
 
-    }, []);
+export function _FilmsList(props) {
+    const aaa = props.films;
 
-    if (films) {
+    if (aaa) {
         return (
             <div>
                 <h1>List</h1>
-                {console.log(films)}
-
-                {films.map(film => <FilmStrip key={film.episode_id} title={film.title} />)}
-
+                {/* {console.log(props)} */}
+                {/* {aaa.map(
+                    film => <FilmStrip key={film.episode_id} title={film.title} />
+                )} */}
 
             </div>
 
@@ -30,4 +22,20 @@ export function FilmsList() {
     else return (
         <h1>LOADING</h1>
     )
+};
+
+const mapStateToProps = state => {
+    return {
+        films: state.reducerA.films
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+
+        onGetFilms: () => dispatch({ type: 'GET_FILMS' })
+
+    }
 }
+
+export const FilmsList = connect(mapStateToProps, mapDispatchToProps)(_FilmsList);
