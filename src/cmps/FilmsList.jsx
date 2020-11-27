@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
-import { FilmStrip } from './FilmStrip';
+// import { FilmStrip } from './FilmStrip';
 import { connect } from 'react-redux';
-
 
 export function _FilmsList(props) {
     const aaa = props.films;
@@ -10,6 +9,7 @@ export function _FilmsList(props) {
         return (
             <div>
                 <h1>List</h1>
+                {console.log('FilmList', aaa)}
                 {/* {console.log(props)} */}
                 {/* {aaa.map(
                     film => <FilmStrip key={film.episode_id} title={film.title} />
@@ -30,12 +30,10 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
+// const mapDispatchToProps = dispatch => {
+//     return {
+//         onGetFilms: () => dispatch({ type: 'GET_FILMS' })
+//     }
+// }
 
-        onGetFilms: () => dispatch({ type: 'GET_FILMS' })
-
-    }
-}
-
-export const FilmsList = connect(mapStateToProps, mapDispatchToProps)(_FilmsList);
+export const FilmsList = connect(mapStateToProps, null)(_FilmsList);

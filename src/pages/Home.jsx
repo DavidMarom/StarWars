@@ -2,14 +2,11 @@ import React, { useEffect } from 'react';
 import TopBar from '../cmps/TopBar';
 import { FilmsList } from '../cmps/FilmsList';
 import { connect } from 'react-redux';
-
+import { onGetFilms } from '../store/actions/action-a';
 
 export function _Home(props) {
-
     useEffect(() => {
-        console.log('****** Home useEffect');
         props.onGetFilms();
-        console.log(props);
     }, []);
 
 
@@ -38,11 +35,8 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-        onGetFilms: () => dispatch({ type: 'GET_FILMS' })
-
-    }
+const mapDispatchToProps = {
+    onGetFilms
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home);
