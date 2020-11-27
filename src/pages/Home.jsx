@@ -7,7 +7,7 @@ import { onGetFilms } from '../store/actions/action-a';
 export function _Home(props) {
     useEffect(() => {
         props.onGetFilms();
-    }, []);
+    },[]);
 
 
     if (props.films) {
