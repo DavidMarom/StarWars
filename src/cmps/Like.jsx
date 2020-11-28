@@ -11,7 +11,11 @@ export const _Like = ({ idx, fav, toggleFavFilm }) => {
     const forceUpdate = useForceUpdate();
     return (
         <div>
-            <div onClick={() => { toggleFavFilm(idx); forceUpdate(); }}>
+            <div onClick={() => {
+                toggleFavFilm(idx);
+                
+                forceUpdate();
+            }}>
                 {(fav[idx] ? <i className="fas fa-heart"></i> : <i className="far fa-heart"></i>)}
             </div>
         </div >

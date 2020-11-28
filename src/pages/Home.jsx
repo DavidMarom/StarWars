@@ -3,11 +3,12 @@ import TopBar from '../cmps/TopBar';
 import { FilmsList } from '../cmps/FilmsList';
 import { connect } from 'react-redux';
 import { onGetFilms } from '../store/actions/action-films';
-import { toggleFavFilm } from '../store/actions/action-pref';
+import { toggleFavFilm, loadStorage } from '../store/actions/action-pref';
 
 export function _Home(props) {
     useEffect(() => {
         props.onGetFilms();
+        props.loadStorage();
     }, []);
 
     if (props.films) {
@@ -36,7 +37,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
     onGetFilms,
-    toggleFavFilm
+    toggleFavFilm,
+    loadStorage
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home);
