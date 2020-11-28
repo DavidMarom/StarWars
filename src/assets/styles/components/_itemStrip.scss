@@ -1,4 +1,10 @@
 .strip{
 
     border-bottom: 1px solid $font-color;
+
+    display: grid;
+    grid-template-columns: 50% 9% 30%;
+
+    margin-bottom: 1rem;
+
 }

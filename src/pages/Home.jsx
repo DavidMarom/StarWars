@@ -3,12 +3,13 @@ import TopBar from '../cmps/TopBar';
 import { FilmsList } from '../cmps/FilmsList';
 import { connect } from 'react-redux';
 import { onGetFilms } from '../store/actions/action-films';
+import { toggleFavFilm } from '../store/actions/action-pref';
 
 export function _Home(props) {
     useEffect(() => {
         props.onGetFilms();
-    },[]);
-
+        // console.log(props.fav);
+    }, []);
 
     if (props.films) {
         return (
@@ -17,6 +18,8 @@ export function _Home(props) {
                     <div className="inner-container">
                         <TopBar />
                         <FilmsList />
+                        {/* <button onClick={() => props.toggleFavFilm(1)}>Test</button>
+                        <button onClick={() => console.log(props.fav)}>Log</button> */}
 
                     </div>
                 </div>
@@ -24,19 +27,20 @@ export function _Home(props) {
         )
     }
     else {
-        return (<h1>LOADING</h1>);
+        return (<h1>Loading...</h1>);
     }
 }
 
-
 const mapStateToProps = state => {
     return {
-        films: state.reducer_films.films
+        films: state.reducer_films.films,
+        fav: state.reducer_pref.fav
     };
 };
 
 const mapDispatchToProps = {
-    onGetFilms
+    onGetFilms,
+    toggleFavFilm
 }
 
 export const Home = connect(mapStateToProps, mapDispatchToProps)(_Home);

@@ -6,8 +6,8 @@ export function _FilmsList({ films }) {
     if (films) {
         return (
             <div>
-                <h1>List</h1>
-                {films.map(film => <FilmStrip key={film.episode_id} title={film.title} />)}
+                <h1>Film List</h1>
+                {films.map((film, idx) => <FilmStrip key={film.episode_id} title={film.title} idx={idx} />)}
             </div>
         )
     }

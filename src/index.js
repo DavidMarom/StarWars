@@ -10,18 +10,15 @@ import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux';
 import reducer_films from './store/reducers/reducer-films';
-import reducerB from './store/reducers/reducer-b';
+import reducer_pref from './store/reducers/reducer-pref';
 
 const rootReducer = combineReducers({
   reducer_films,
-  reducerB
+  reducer_pref
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
-
-
 
 ReactDOM.render(
   <React.StrictMode>
