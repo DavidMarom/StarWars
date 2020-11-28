@@ -13,3 +13,16 @@
 .bar-left {
     max-width: 50%;
 }
+
+@media (max-width: $normal-breakpoint) {
+    .bar-left {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 537px) {
+    .bar-left {
+        display: flex;
+        flex-direction: column;
+    }
+}
