@@ -13,7 +13,6 @@ export const _Like = ({ idx, fav, toggleFavFilm }) => {
         <div>
             <div onClick={() => {
                 toggleFavFilm(idx);
-                
                 forceUpdate();
             }}>
                 {(fav[idx] ? <i className="fas fa-heart"></i> : <i className="far fa-heart"></i>)}

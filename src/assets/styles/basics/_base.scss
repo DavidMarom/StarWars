@@ -19,21 +19,19 @@ body {
     margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: sw;
     font-weight: 100;
-
-    // margin: 0 0 0.6em;
-    // line-height: 1;
 }
 
 h1 {
     font-size: rem(68px);
 }
-
-// img {
-//     width: 100%;
-// }
 
 p {
     margin: 0 0 1em;
@@ -42,7 +40,6 @@ p {
 
 .underline {
     text-decoration: underline;
-
 }
 
 /* HIGHT *********************/
@@ -105,40 +102,11 @@ p {
     min-width: 1000px;
 }
 
-/* HEIGHT *****************************/
-
-.h200 {
-    height: 200px;
-}
-
-
-
 /* IMAGE *********************/
 
 .img-75 {
     max-width: auto;
     max-height: 75px;
-}
-
-/* FONT **********************/
-
-.font-white {
-    color: #ffffff;
-    font-size: 1rem;
-}
-
-.font-pink {
-    color: #F67E7E;
-    font-size: 1rem;
-}
-
-.pad-left-100 {
-    padding-left: 100px;
-}
-
-.big-text {
-    color: #ffffff;
-    font-size: 3rem;
 }
 
 /* MARGIN  *************************/

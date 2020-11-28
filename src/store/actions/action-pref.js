@@ -9,4 +9,3 @@ export function loadStorage() {
         dispatch({ type: 'LOAD_STORAGE' })
     }
 }
-

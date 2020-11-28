@@ -7,8 +7,6 @@ const initialState = {
 const reducer_pref = (state = initialState, action) => {
 
     switch (action.type) {
-        case 'GET_FAV':
-            return state
         case 'TOGGLE_FILM':
             state.fav[action.number] = !state.fav[action.number];
             storageService.saveToStorage('likes', state.fav);
