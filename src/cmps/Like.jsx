@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { toggleFavFilm } from '../store/actions/action-pref';
 
-
-export const _Like = ({idx,fav}) => {
-    return (
-        <div>
-            <p>{idx}</p>
-            {console.log(fav)}
-        </div>
-    )
+function useForceUpdate() {
+    const [value, setValue] = useState(0);
+    return () => setValue(value => ++value);
 }
 
+export const _Like = ({ idx, fav, toggleFavFilm }) => {
+    const forceUpdate = useForceUpdate();
+
+    return (
+        <div>
+            <button onClick={() => { toggleFavFilm(idx); forceUpdate(); }}>
+                {(fav[idx] ? <p>Liked</p> : <p>Not Liked</p>)}
+            </button>
+        </div >
+    )
+}
 
 const mapStateToProps = state => {
     return {
