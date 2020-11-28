@@ -7,7 +7,7 @@ This web app displays the star-wars movie list and allows the user to mark movie
 You should have npm installed on your machine first. you can get it here: [https://www.npmjs.com/get-npm](https://www.npmjs.com/get-npm)
 
 1. In your terminal, go to the root project folder (where this file is located)
-2. Type "npm i" and press enter. This should take a while.
-3. Type "npm start"
+2. Type ```npm i``` and press enter. This should take a while.
+3. Type ```npm start```, press enter.
 
 May the force be with you.
