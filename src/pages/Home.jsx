@@ -8,7 +8,6 @@ import { toggleFavFilm } from '../store/actions/action-pref';
 export function _Home(props) {
     useEffect(() => {
         props.onGetFilms();
-        // console.log(props.fav);
     }, []);
 
     if (props.films) {
@@ -18,9 +17,6 @@ export function _Home(props) {
                     <div className="inner-container">
                         <TopBar />
                         <FilmsList />
-                        {/* <button onClick={() => props.toggleFavFilm(1)}>Test</button>
-                        <button onClick={() => console.log(props.fav)}>Log</button> */}
-
                     </div>
                 </div>
             </div>

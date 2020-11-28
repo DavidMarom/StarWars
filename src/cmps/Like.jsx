@@ -9,12 +9,11 @@ function useForceUpdate() {
 
 export const _Like = ({ idx, fav, toggleFavFilm }) => {
     const forceUpdate = useForceUpdate();
-
     return (
         <div>
-            <button onClick={() => { toggleFavFilm(idx); forceUpdate(); }}>
-                {(fav[idx] ? <p>Liked</p> : <p>Not Liked</p>)}
-            </button>
+            <div onClick={() => { toggleFavFilm(idx); forceUpdate(); }}>
+                {(fav[idx] ? <i className="fas fa-heart"></i> : <i className="far fa-heart"></i>)}
+            </div>
         </div >
     )
 }
